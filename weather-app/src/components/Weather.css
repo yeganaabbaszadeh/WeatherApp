@@ -1,0 +1,34 @@
+.Weather {
+    background-image: url(../images/backgrounds/Main.jpg);
+    background-size: cover;
+    background-position: bottom;
+    transition: 0.4 ease;
+  }
+  
+  .Weather.clear {
+    background-image: url(../images/backgrounds/Clear.jpg);
+  }
+  
+  .Weather.clouds {
+    background-image: url(../images/backgrounds/Clouds.jpg);
+  }
+  
+  .Weather.drizzle {
+    background-image: url(../images/backgrounds/Drizzle.jpg);
+  }
+  
+  .Weather.atmosphere {
+    background-image: url(../images/backgrounds/Mist.jpg);
+  }
+  
+  .Weather.rain {
+    background-image: url(../images/backgrounds/Rain.jpg);
+  }
+  
+  .Weather.snow {
+    background-image: url(../images/backgrounds/Snow.jpg);
+  }
+  
+  .Weather.thunderstorm {
+    background-image: url(../images/backgrounds/Thunderstorm.jpg);
+  }
