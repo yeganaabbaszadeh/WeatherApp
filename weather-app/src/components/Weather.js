@@ -1,5 +1,6 @@
 import './Weather.css';
 import '../App.css';
+import Header from './Header'
 import { useState } from 'react';
 import moment from 'moment';
 
@@ -55,6 +56,7 @@ function Weather() {
       weatherClass()
       : 'Weather')}>
       <main>
+        <Header />
         <div className="search-box">
           <input
             type="text"
@@ -64,47 +66,67 @@ function Weather() {
             value={query}
             onKeyPress={search}
           />
-          
+
         </div>
         {(typeof weather.main != "undefined") ? (
           <div>
+
             <div className="location-box">
-              <img src={require("../images/icons/location.png").default} alt="location"></img>
-              <div>{weather.name}, {weather.sys.country}</div>
-              <div>{moment(new Date()).format('dddd MMMM D')}</div>
+              
+              <div className="location">
+                <img src={require("../images/icons/location.png").default} alt="location" width="48" style={{ paddingRight: 5, paddingBottom: 10 }}></img>
+                {weather.name}, {weather.sys.country}
+              </div>
+              <div className="date">{moment(new Date()).format('dddd MMMM D')}</div>
+
             </div>
 
             <div className="weather-box">
-              <img src={require("../images/icons/" + weather.weather[0].icon + ".png").default} alt={weather.weather[0].description} />
-              <div>{Math.round(weather.main.temp)}°C</div>
-              <div>{weather.weather[0].description}</div>
-            </div>
 
-            <div className="weather-details">
-              <div>{Math.round(weather.main.temp_min)}°C / {Math.round(weather.main.temp_max)}°C</div>
-              <div>
-                {moment(weather.sys.sunrise * 1000).format('hh:mm a')}
-                <img src={require("../images/icons/sunrise.png").default} alt="sunrise"></img>
+              <div className="weather-temp">
+                <img src={require("../images/icons/" + weather.weather[0].icon + ".png").default} alt={weather.weather[0].description} width="128" style={{ paddingRight: 10 }} />
+                {Math.round(weather.main.temp)}°C
+                <div className="description">{weather.weather[0].description}</div>
               </div>
-              <div>
-                {moment(weather.sys.sunset * 1000).format('hh:mm a')}
-                <img src={require("../images/icons/sunset.png").default} alt="sunset"></img>
-              </div>
-              <div>
-                {weather.main.pressure} hPa
-                <img src={require("../images/icons/pressure.png").default} alt="atmosphere pressure"></img>
-              </div>
-              <div>
-                {weather.main.humidity}%
-                <img src={require("../images/icons/humidity.png").default} alt="humidity"></img>
-              </div>
-              <div>
-                {weather.wind.speed} m/s
-                <img src={require("../images/icons/wind_speed.png").default} alt="wind speed"></img>
-              </div>
-              <div>
-                {weather.clouds.all}%
-                <img src={require("../images/icons/cloud.png").default} alt="cloudiness"></img>
+
+              <div className="weather-details">
+                <div className="row">
+                  <div className="item">
+                    <img src={require("../images/icons/min.png").default} alt="min"></img>
+                    {Math.round(weather.main.temp_min)}°C
+                  </div>
+                  <div className="item">
+                    <img src={require("../images/icons/sunrise.png").default} alt="sunrise"></img>
+                    {moment(weather.sys.sunrise * 1000).format('hh:mm a')}
+                  </div>
+                  <div className="item">
+                    <img src={require("../images/icons/humidity.png").default} alt="humidity"></img>
+                    {weather.main.humidity}%
+                  </div>
+                  <div className="item">
+                    <img src={require("../images/icons/wind_speed.png").default} alt="wind speed"></img>
+                    {weather.wind.speed} m/s
+                  </div>
+                </div>
+
+                <div className="row">
+                  <div className="item">
+                    <img src={require("../images/icons/max.png").default} alt="max"></img>
+                    {Math.round(weather.main.temp_max)}°C
+                  </div>
+                  <div className="item">
+                    <img src={require("../images/icons/sunset.png").default} alt="sunset"></img>
+                    {moment(weather.sys.sunset * 1000).format('hh:mm a')}
+                  </div>
+                  <div className="item">
+                    <img src={require("../images/icons/cloud.png").default} alt="cloudiness"></img>
+                    {weather.clouds.all}%
+                  </div>
+                  <div className="item">
+                    <img src={require("../images/icons/pressure.png").default} alt="atmosphere pressure"></img>
+                    {weather.main.pressure} hPa
+                  </div>
+                </div>
               </div>
             </div>
           </div>

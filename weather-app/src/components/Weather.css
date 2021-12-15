@@ -2,7 +2,7 @@
     background-image: url(../images/backgrounds/Main.jpg);
     background-size: cover;
     background-position: bottom;
-    transition: 0.4 ease;
+    transition: 0.1 ease;
   }
   
   .Weather.clear {
