@@ -21,8 +21,8 @@ main {
 h1 {
   color: #fff;
   font-size: 32px;
-  font-weight: 750;
-  text-align: left;
+  font-weight: 700;
+  text-align: center;
   font-family: "montserrat", sans-serif;
   text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
 }
