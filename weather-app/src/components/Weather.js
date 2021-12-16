@@ -5,7 +5,7 @@ import { useState } from 'react';
 import moment from 'moment';
 
 const api = {
-  key: '9983e134bb0c19083c7891c2bf4e38ed',
+  key: '320d65f921704f64a9e9ca554f4299ae  ',
   base: 'https://api.openweathermap.org/data/2.5/'
 }
 
