@@ -4,9 +4,9 @@ Simple forecast app to show current weather condition
 
 ![Main page](SampleImages/Welcome_page.png)
 
-![Clear](SampleImages/Clear.png)
-
 ![Cloudy](SampleImages/Clouds.png)
+
+![Clear](SampleImages/Clear.png)
 
 ![Drizzle](SampleImages/Drizzle.png)
 
