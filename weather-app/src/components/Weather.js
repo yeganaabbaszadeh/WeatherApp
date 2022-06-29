@@ -3,6 +3,7 @@ import '../App.css';
 import Header from './Header'
 import { useState } from 'react';
 import moment from 'moment';
+import React, { Component }  from 'react';
 
 const api = {
   key: '320d65f921704f64a9e9ca554f4299ae  ',
@@ -74,7 +75,7 @@ function Weather() {
             <div className="location-box">
               
               <div className="location">
-                <img src={require("../images/icons/location.png").default} alt="location" width="48" style={{ paddingRight: 5, paddingBottom: 10 }}></img>
+                <img src={require("../images/icons/location.png")} alt="location" width="48" style={{ paddingRight: 5, paddingBottom: 10 }}></img>
                 {weather.name}, {weather.sys.country}
               </div>
               <div className="date">{moment(new Date()).format('dddd MMMM D')}</div>
@@ -84,7 +85,7 @@ function Weather() {
             <div className="weather-box">
 
               <div className="weather-temp">
-                <img src={require("../images/icons/" + weather.weather[0].icon + ".png").default} alt={weather.weather[0].description} width="128" style={{ paddingRight: 10 }} />
+                <img src={require("../images/icons/" + weather.weather[0].icon + ".png")} alt={weather.weather[0].description} width="128" style={{ paddingRight: 10 }} />
                 {Math.round(weather.main.temp)}°C
                 <div className="description">{weather.weather[0].description}</div>
               </div>
@@ -92,38 +93,38 @@ function Weather() {
               <div className="weather-details">
                 <div className="row">
                   <div className="item">
-                    <img src={require("../images/icons/min.png").default} alt="min"></img>
+                    <img src={require("../images/icons/min.png")} alt="min"></img>
                     {Math.round(weather.main.temp_min)}°C
                   </div>
                   <div className="item">
-                    <img src={require("../images/icons/sunrise.png").default} alt="sunrise"></img>
+                    <img src={require("../images/icons/sunrise.png")} alt="sunrise"></img>
                     {moment(weather.sys.sunrise * 1000).format('hh:mm a')}
                   </div>
                   <div className="item">
-                    <img src={require("../images/icons/humidity.png").default} alt="humidity"></img>
+                    <img src={require("../images/icons/humidity.png")} alt="humidity"></img>
                     {weather.main.humidity}%
                   </div>
                   <div className="item">
-                    <img src={require("../images/icons/wind_speed.png").default} alt="wind speed"></img>
+                    <img src={require("../images/icons/wind_speed.png")} alt="wind speed"></img>
                     {weather.wind.speed} m/s
                   </div>
                 </div>
 
                 <div className="row">
                   <div className="item">
-                    <img src={require("../images/icons/max.png").default} alt="max"></img>
+                    <img src={require("../images/icons/max.png")} alt="max"></img>
                     {Math.round(weather.main.temp_max)}°C
                   </div>
                   <div className="item">
-                    <img src={require("../images/icons/sunset.png").default} alt="sunset"></img>
+                    <img src={require("../images/icons/sunset.png")} alt="sunset"></img>
                     {moment(weather.sys.sunset * 1000).format('hh:mm a')}
                   </div>
                   <div className="item">
-                    <img src={require("../images/icons/cloud.png").default} alt="cloudiness"></img>
+                    <img src={require("../images/icons/cloud.png")} alt="cloudiness"></img>
                     {weather.clouds.all}%
                   </div>
                   <div className="item">
-                    <img src={require("../images/icons/pressure.png").default} alt="atmosphere pressure"></img>
+                    <img src={require("../images/icons/pressure.png")} alt="atmosphere pressure"></img>
                     {weather.main.pressure} hPa
                   </div>
                 </div>
